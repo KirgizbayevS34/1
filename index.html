@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Wonder Kids — образовательный центр в Шымкенте</title>
+<meta name="description" content="Подготовка к школе, английский язык, ментальная арифметика, каллиграфия и продлёнка для детей в Шымкенте, мкр. Малый Самал. Рейтинг 5,0 в 2GIS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   Design system: UI/UX Pro Max → "Wonder Kids"
+   Style: Claymorphism · Pattern: Hero + Social proof + Conversion
+   Dials: variance 5 · motion 4 · density 3 (spacious)
+   Fonts: Nunito (замена Baloo 2 + Comic Neue — у них нет кириллицы/казахских букв)
+   ===================================================================== */
+:root{
+  /* semantic tokens from the skill */
+  --color-primary:#2563EB; --color-on-primary:#FFFFFF;
+  --color-primary-deep:#1D4ED8;
+  --color-secondary:#F59E0B; --color-on-secondary:#0F172A;
+  --color-accent:#EC4899; --color-on-accent:#0F172A;
+  --color-background:#EFF6FF; --color-foreground:#0F172A;
+  --color-card:#FFFFFF; --color-muted:#F1F5FD; --color-muted-foreground:#475569;
+  --color-border:#E4ECFC; --color-ring:#2563EB; --color-destructive:#DC2626;
+  /* claymorphism pastels */
+  --clay-peach:#FFE1DC; --clay-blue:#DCEEFB; --clay-mint:#D9F7E4; --clay-lilac:#ECEBFF; --clay-sun:#FFF1C9; --clay-pink:#FFE0EF;
+  /* clay geometry */
+  --radius:24px; --radius-sm:18px; --border-w:3px;
+  --shadow-clay: 10px 12px 24px rgba(37,99,235,.13), inset -4px -5px 10px rgba(15,23,42,.06), inset 4px 4px 10px rgba(255,255,255,.95);
+  --shadow-clay-sm: 6px 7px 14px rgba(37,99,235,.12), inset -3px -3px 7px rgba(15,23,42,.06), inset 3px 3px 7px rgba(255,255,255,.95);
+  --bounce:cubic-bezier(.34,1.56,.64,1);
+  /* spacious density scale */
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px; --space-5:48px; --space-6:64px; --space-7:96px;
+  --font:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--color-background);color:var(--color-foreground);font:500 17px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font);line-height:1.12;margin:0 0 .45em;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.2vw,44px);font-weight:900}
+h3{font-size:21px;font-weight:800}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:var(--space-7) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-primary);background:#fff;border:var(--border-w) solid var(--color-border);border-radius:999px;padding:6px 14px;margin-bottom:18px;box-shadow:var(--shadow-clay-sm)}
+.lead{color:var(--color-muted-foreground);font-size:19px;max-width:640px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+.ico{width:1em;height:1em;stroke-width:2.4;flex:none}
+:focus-visible{outline:3px solid var(--color-ring);outline-offset:3px;border-radius:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* demo ribbon */
+.demo{background:var(--color-foreground);color:#fff;font-size:14px;text-align:center;padding:9px 16px}
+.demo mark{background:var(--color-secondary);color:var(--color-on-secondary);border-radius:6px;padding:1px 6px;font-weight:800}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;padding:12px 0;background:rgba(239,246,255,.85);backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border:var(--border-w) solid #fff;border-radius:999px;padding:8px 8px 8px 14px;box-shadow:var(--shadow-clay-sm)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:22px}
+.logo-mark{width:42px;height:42px;border-radius:14px;background:var(--color-primary);display:grid;place-items:center;color:#fff;box-shadow:inset -3px -4px 0 rgba(0,0,0,.18),inset 3px 3px 0 rgba(255,255,255,.25)}
+.logo-mark svg{width:24px;height:24px}
+.logo b{color:var(--color-accent)}
+.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.menu a{display:block;white-space:nowrap;text-decoration:none;font-weight:700;font-size:16px;padding:10px 12px;border-radius:999px;transition:background .2s}
+.menu a:hover{background:var(--color-muted)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.phone{display:flex;align-items:center;gap:6px;font-weight:800;text-decoration:none;white-space:nowrap;padding:0 8px}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:0;background:var(--color-muted);cursor:pointer;color:var(--color-foreground);place-items:center}
+.burger svg{width:24px;height:24px}
+
+/* ---------- clay buttons ---------- */
+.btn{--b:var(--color-primary);--d:var(--color-primary-deep);--t:var(--color-on-primary);
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;
+  background:var(--b);color:var(--t);font:800 17px var(--font);text-decoration:none;cursor:pointer;
+  box-shadow:0 6px 0 var(--d),0 12px 20px rgba(15,23,42,.14),inset 0 2px 0 rgba(255,255,255,.35);
+  transition:transform .2s ease-out,box-shadow .2s ease-out}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--d),0 16px 24px rgba(15,23,42,.16),inset 0 2px 0 rgba(255,255,255,.35)}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 var(--d),0 4px 8px rgba(15,23,42,.12),inset 0 2px 0 rgba(255,255,255,.35)}
+.btn .ico{width:22px;height:22px}
+.btn-cta{--b:var(--color-accent);--d:#BE185D;--t:var(--color-on-accent)}
+.btn-wa{--b:#25D366;--d:#139A48;--t:#0F172A}
+.btn-soft{--b:#fff;--d:#CBD8F0;--t:var(--color-foreground)}
+.btn-sm{min-height:46px;padding:0 20px;font-size:15px}
+.btn[aria-busy="true"]{opacity:.7;pointer-events:none}
+
+/* ---------- clay surfaces ---------- */
+.clay{background:var(--color-card);border:var(--border-w) solid #fff;border-radius:var(--radius);box-shadow:var(--shadow-clay)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--color-muted);color:var(--color-muted-foreground)}
+.todo{display:inline-flex;align-items:center;font-size:12px;font-weight:800;background:var(--clay-sun);color:#7A4E00;border:2px solid #FFE08A;border-radius:8px;padding:1px 7px;vertical-align:middle;white-space:nowrap}
+
+/* ---------- hero ---------- */
+.hero{padding:var(--space-5) 0 var(--space-6)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:var(--space-5);align-items:center}
+.rating-pill{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:15px;background:#fff;border:var(--border-w) solid #fff;border-radius:999px;padding:8px 16px 8px 8px;box-shadow:var(--shadow-clay-sm)}
+.rating-pill .r{background:var(--color-secondary);color:var(--color-on-secondary);border-radius:999px;padding:4px 10px;display:flex;align-items:center;gap:4px}
+.stars{display:inline-flex;gap:2px;color:var(--color-secondary)}
+.stars svg{width:18px;height:18px;fill:currentColor}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:900;margin:22px 0 18px}
+.hero h1 .hl{color:var(--color-primary);position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:4px;height:14px;background:var(--clay-pink);border-radius:8px;z-index:-1}
+.hero .lead{margin-bottom:var(--space-4)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:var(--space-4)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:12px}
+.hero-facts .chip{background:#fff;box-shadow:var(--shadow-clay-sm);border:2px solid #fff}
+.hero-facts .ico{color:var(--color-primary);width:18px;height:18px}
+
+.hero-art{position:relative;aspect-ratio:1/1;max-width:540px;justify-self:center;width:100%}
+.bubble{position:absolute;border-radius:50%;box-shadow:inset -10px -12px 24px rgba(15,23,42,.10),inset 10px 10px 22px rgba(255,255,255,.8),12px 16px 30px rgba(37,99,235,.15)}
+.bu1{inset:8% 6% 8% 8%;background:#BFDBFE;border-radius:46% 54% 50% 50%/52% 46% 54% 48%}
+.bu2{width:26%;height:26%;right:2%;top:2%;background:var(--clay-sun)}
+.bu3{width:18%;height:18%;left:0;bottom:12%;background:var(--clay-pink)}
+.photo{position:absolute;inset:17% 15% 17% 17%;border-radius:36px;background:#fff;border:4px solid #fff;box-shadow:var(--shadow-clay);display:grid;place-items:center;text-align:center;padding:24px;color:var(--color-muted-foreground);font-weight:700}
+.photo .ph-ico{width:72px;height:72px;margin:0 auto 10px;border-radius:22px;background:var(--clay-lilac);display:grid;place-items:center;color:var(--color-primary)}
+.photo .ph-ico svg{width:38px;height:38px}
+.tag-float{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;border:var(--border-w) solid #fff;border-radius:20px;padding:10px 14px;box-shadow:var(--shadow-clay-sm);font-weight:800;font-size:15px;animation:float 5s ease-in-out infinite}
+.tag-float .i{width:38px;height:38px;border-radius:12px;display:grid;place-items:center}
+.tag-float .i svg{width:20px;height:20px}
+.tf1{left:-2%;top:22%}
+.tf2{right:-3%;bottom:20%;animation-delay:-2.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* proof strip */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3);padding:var(--space-3);margin-top:var(--space-5)}
+.proof div{display:flex;align-items:center;gap:14px}
+.proof .i{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;flex:none;box-shadow:inset -3px -3px 6px rgba(15,23,42,.06),inset 3px 3px 6px rgba(255,255,255,.9)}
+.proof .i svg{width:26px;height:26px}
+.proof b{display:block;font-size:22px;font-weight:900;line-height:1.1}
+.proof small{color:var(--color-muted-foreground);font-size:14px;font-weight:600}
+
+/* ---------- problem ---------- */
+.pains{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3);margin-top:var(--space-5)}
+.pain{padding:var(--space-4) var(--space-3)}
+.pain .i{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;margin-bottom:16px}
+.pain .i svg{width:28px;height:28px}
+.pain p{color:var(--color-muted-foreground);margin:0;font-size:16px}
+.answer{margin-top:var(--space-4);display:flex;align-items:center;justify-content:center;gap:12px;font-size:20px;font-weight:800;text-align:center}
+.answer svg{color:var(--color-accent);width:28px;height:28px}
+
+/* ---------- directions ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-5)}
+.card{display:flex;flex-direction:column;padding:var(--space-4) var(--space-3) var(--space-3);background:var(--tint);transition:transform .35s var(--bounce)}
+.card:hover{transform:translateY(-6px) rotate(-.4deg)}
+.card .i{width:64px;height:64px;border-radius:20px;background:#fff;display:grid;place-items:center;margin-bottom:18px;color:var(--ic);box-shadow:var(--shadow-clay-sm)}
+.card .i svg{width:32px;height:32px}
+.card .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.card .chip{background:rgba(255,255,255,.75)}
+.card p{color:#334155;font-size:16px;flex:1}
+.card .foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px}
+.card .price{font-weight:800;font-size:15px}
+
+/* ---------- camp ---------- */
+.camp{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-5);align-items:center;padding:var(--space-6) var(--space-5);background:var(--color-primary);border-color:#3B76F0;color:#fff;
+  box-shadow:14px 16px 32px rgba(37,99,235,.28),inset -8px -10px 20px rgba(0,0,0,.14),inset 8px 8px 18px rgba(255,255,255,.18)}
+.camp h2{color:#fff}
+.camp .lead{color:rgba(255,255,255,.88)}
+.camp .eyebrow{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25);color:#fff;box-shadow:none}
+.camp-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;list-style:none;padding:0;margin:0 0 var(--space-4)}
+.camp-list li{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.18);border-radius:16px;padding:12px 14px;font-weight:700;font-size:16px}
+.camp-list svg{width:22px;height:22px;color:var(--clay-sun)}
+.camp-photo{aspect-ratio:4/5;border-radius:32px;background:rgba(255,255,255,.1);border:3px dashed rgba(255,255,255,.35);display:grid;place-items:center;text-align:center;font-weight:700;padding:24px;color:rgba(255,255,255,.85)}
+.camp-photo svg{width:48px;height:48px;margin:0 auto 10px;display:block}
+
+/* ---------- advantages ---------- */
+.adv{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-5)}
+.adv-item{padding:var(--space-4) var(--space-3);display:flex;gap:18px;align-items:flex-start}
+.adv-item .i{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;flex:none;box-shadow:inset -3px -3px 6px rgba(15,23,42,.07),inset 3px 3px 6px rgba(255,255,255,.9)}
+.adv-item .i svg{width:28px;height:28px}
+.adv-item p{color:var(--color-muted-foreground);font-size:16px;margin:0}
+.adv-item h3{font-size:19px;margin-bottom:6px}
+
+/* ---------- reviews ---------- */
+.rev-top{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--space-3);flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:18px;padding:18px 24px}
+.score .num{font-size:52px;font-weight:900;line-height:1;color:var(--color-primary)}
+.score small{display:block;color:var(--color-muted-foreground);font-weight:700;margin-top:4px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-5)}
+.review{padding:var(--space-4) var(--space-3) var(--space-3);display:flex;flex-direction:column;position:relative}
+.review .q{position:absolute;right:20px;top:16px;width:44px;height:44px;color:var(--clay-lilac)}
+.review blockquote{margin:14px 0 22px;font-size:18px;font-weight:600;flex:1}
+.who{display:flex;align-items:center;gap:12px}
+.ava{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-weight:900;color:var(--color-foreground)}
+.who b{display:block;font-size:16px}
+.who small{color:var(--color-muted-foreground);font-size:14px}
+.src{margin-left:auto;font-size:13px;font-weight:800;text-decoration:none;color:var(--color-primary);background:var(--color-muted);border-radius:999px;padding:6px 12px;min-height:32px;display:inline-flex;align-items:center}
+
+/* ---------- team & gallery ---------- */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3);margin-top:var(--space-5)}
+.member{padding:14px;text-align:center}
+.member .ph{aspect-ratio:1/1;border-radius:18px;display:grid;place-items:center;margin-bottom:14px;color:rgba(15,23,42,.45)}
+.member .ph svg{width:56px;height:56px}
+.member b{display:block}
+.member small{color:var(--color-muted-foreground);font-weight:600}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:var(--space-2);margin-top:var(--space-5)}
+.g{border-radius:var(--radius);border:var(--border-w) solid #fff;box-shadow:var(--shadow-clay-sm);display:grid;place-items:center;text-align:center;font-weight:800;color:rgba(15,23,42,.55);padding:12px}
+.g svg{width:36px;height:36px;display:block;margin:0 auto 8px}
+.g.w2{grid-column:span 2}.g.h2{grid-row:span 2}
+
+/* ---------- faq ---------- */
+.faq{max-width:840px;margin:var(--space-5) auto 0;display:grid;gap:14px}
+details{padding:0 var(--space-3)}
+summary{cursor:pointer;list-style:none;min-height:64px;padding:18px 0;font-weight:800;font-size:18px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary .pl{width:36px;height:36px;border-radius:12px;background:var(--color-muted);display:grid;place-items:center;flex:none;transition:transform .3s var(--bounce)}
+summary .pl svg{width:20px;height:20px;color:var(--color-primary)}
+details[open] summary .pl{transform:rotate(45deg)}
+details p{color:var(--color-muted-foreground);padding-bottom:20px;margin:0}
+
+/* ---------- booking ---------- */
+.book{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-3);margin-top:var(--space-5)}
+.panel{padding:var(--space-4)}
+form{display:grid;gap:18px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:grid;gap:6px}
+.field label{font-size:15px;font-weight:800}
+.field .help{font-size:13px;color:var(--color-muted-foreground);font-weight:600}
+input,select,textarea{font:600 17px var(--font);min-height:54px;padding:12px 16px;border-radius:16px;border:var(--border-w) solid var(--color-border);background:var(--color-muted);color:var(--color-foreground);width:100%;
+  box-shadow:inset 3px 3px 6px rgba(15,23,42,.05),inset -3px -3px 6px rgba(255,255,255,.9);transition:border-color .2s,background .2s}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--color-ring);background:#fff}
+.field.invalid input{border-color:var(--color-destructive);background:#FEF2F2}
+.err{display:none;align-items:center;gap:6px;color:var(--color-destructive);font-size:14px;font-weight:700}
+.err svg{width:16px;height:16px}
+.field.invalid .err{display:flex}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;font-weight:600;color:var(--color-muted-foreground);cursor:pointer}
+.consent input{width:24px;height:24px;min-height:0;margin:0;flex:none;accent-color:var(--color-primary)}
+.consent.invalid{color:var(--color-destructive)}
+.ok{display:none;align-items:center;gap:10px;background:var(--clay-mint);border-radius:16px;padding:14px 16px;font-weight:800;color:#065F46}
+.ok svg{width:22px;height:22px}
+.contact-list{list-style:none;padding:0;margin:0 0 var(--space-3);display:grid;gap:16px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start}
+.contact-list .i{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;flex:none;background:var(--color-muted);color:var(--color-primary)}
+.contact-list .i svg{width:22px;height:22px}
+.contact-list a{font-weight:800;text-decoration:none}
+.contact-list small{color:var(--color-muted-foreground);font-weight:600}
+.map{border:var(--border-w) solid #fff;width:100%;height:260px;border-radius:20px;margin-bottom:16px;background:var(--color-muted);box-shadow:var(--shadow-clay-sm)}
+.map-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+footer{background:var(--color-foreground);color:rgba(255,255,255,.75);padding:var(--space-5) 0 120px;font-size:15px;margin-top:var(--space-6)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer a{color:#fff}
+
+/* floating WhatsApp + mobile action bar */
+.fab{position:fixed;right:24px;bottom:24px;z-index:60;width:64px;height:64px;border-radius:22px;background:#25D366;display:grid;place-items:center;
+  box-shadow:0 6px 0 #139A48,0 14px 26px rgba(37,211,102,.4),inset 0 2px 0 rgba(255,255,255,.35);transition:transform .2s ease-out}
+.fab:hover{transform:translateY(-3px)}
+.fab svg{width:32px;height:32px;fill:#fff}
+.mbar{display:none}
+
+/* reveal (stagger) — skill motion preset "Stagger List", CSS version */
+.reveal{opacity:0;transform:translateY(16px) scale(.96);transition:opacity .4s ease-out,transform .45s var(--bounce);transition-delay:calc(var(--i,0) * 60ms)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- responsive: 375 / 768 / 1024 / 1440 ---------- */
+@media (max-width:1320px){ .phone{display:none} }
+@media (max-width:1024px){
+  .menu{display:none}
+  .burger{display:grid}
+  .menu.open{display:flex;flex-direction:column;position:absolute;top:calc(100% + 8px);left:20px;right:20px;background:#fff;border-radius:24px;padding:12px;box-shadow:var(--shadow-clay)}
+  .menu.open a{padding:14px 16px;font-size:18px}
+  header .wrap{position:relative}
+  .hero-grid,.camp,.book{grid-template-columns:1fr}
+  .hero-art{max-width:460px}
+  .cards,.adv,.reviews{grid-template-columns:1fr 1fr}
+  .pains,.proof{grid-template-columns:1fr 1fr}
+  .team,.gallery{grid-template-columns:1fr 1fr}
+  .camp{padding:var(--space-5) var(--space-4)}
+  .camp-photo{aspect-ratio:16/9}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:var(--space-6) 0}
+  .wrap{padding:0 16px}
+  .phone,.nav-right .btn{display:none}
+  .cards,.adv,.reviews,.row2,.camp-list,.pains{grid-template-columns:1fr}
+  .proof{grid-template-columns:1fr 1fr;gap:18px}
+  .proof b{font-size:19px}
+  .gallery{grid-auto-rows:140px}
+  .hero-cta .btn{width:100%}
+  .panel{padding:var(--space-3)}
+  .camp{padding:var(--space-4) var(--space-3)}
+  .tag-float{font-size:13px;padding:8px 10px}
+  .tag-float .i{width:30px;height:30px}
+  .tf1{left:0;top:6%}.tf2{right:0;bottom:6%}
+  .fab{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:60;background:#fff;border:var(--border-w) solid #fff;border-radius:24px;padding:8px;box-shadow:0 10px 30px rgba(15,23,42,.18)}
+  .mbar a{min-height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:800;font-size:15px;background:var(--color-muted)}
+  .mbar a svg{width:20px;height:20px}
+  .mbar a.wa{background:#25D366;color:#0F172A;box-shadow:0 4px 0 #139A48}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">Дизайн-концепт для согласования. Метки <mark>уточнить</mark> — данные, которые нужно подтвердить у владельца.</div>
+
+<header>
+  <div class="wrap">
+    <nav class="nav" aria-label="Главное меню">
+      <a href="#top" class="logo" aria-label="Wonder Kids — на главную">
+        <span class="logo-mark"><i data-lucide="sparkles"></i></span>Wonder<b>Kids</b>
+      </a>
+      <ul class="menu" id="menu">
+        <li><a href="#directions">Направления</a></li>
+        <li><a href="#camp">Лагерь</a></li>
+        <li><a href="#why">Почему мы</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <div class="nav-right">
+        <a class="phone" href="tel:+77474008840"><i data-lucide="phone" class="ico"></i>+7 747 400 88 40</a>
+        <a class="btn btn-cta btn-sm" href="#book">Записаться</a>
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><i data-lucide="menu"></i></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <a class="rating-pill" href="https://2gis.kz/shymkent/firm/70000001085290701/tab/reviews" target="_blank" rel="noopener">
+          <span class="r"><i data-lucide="star" class="ico" style="fill:currentColor"></i>5,0</span> 79 оценок родителей в 2GIS
+        </a>
+        <h1>Готовим к школе так, что ребёнок <span class="hl">бежит</span> на занятия</h1>
+        <p class="lead">Подготовка к школе, английский язык, ментальная арифметика, каллиграфия и продлёнка в Шымкенте. Маленькие группы и внимание к каждому ребёнку.</p>
+        <div class="hero-cta">
+          <a class="btn btn-cta" href="#book"><i data-lucide="calendar-check" class="ico"></i>Записаться на пробное занятие</a>
+          <a class="btn btn-wa" data-wa="Здравствуйте! Хочу узнать о занятиях в Wonder Kids." href="#"><i data-lucide="message-circle" class="ico"></i>Написать в WhatsApp</a>
+        </div>
+        <div class="hero-facts">
+          <span class="chip"><i data-lucide="map-pin" class="ico"></i>Малый Самал, 1-й пер. Байтурсынова, 5</span>
+          <span class="chip"><i data-lucide="clock" class="ico"></i>Ежедневно 08:30–18:00</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="bubble bu1"></div><div class="bubble bu2"></div><div class="bubble bu3"></div>
+        <div class="photo"><div><div class="ph-ico"><i data-lucide="image"></i></div>Здесь будет реальное фото<br>детей на занятии</div></div>
+        <div class="tag-float tf1"><span class="i" style="background:var(--clay-mint);color:#047857"><i data-lucide="heart-handshake"></i></span>Индивидуальный подход</div>
+        <div class="tag-float tf2"><span class="i" style="background:var(--clay-sun);color:#B45309"><i data-lucide="users"></i></span>Маленькие группы</div>
+      </div>
+    </div>
+
+    <div class="proof clay" role="list">
+      <div role="listitem"><span class="i" style="background:var(--clay-sun);color:#B45309"><i data-lucide="star"></i></span><span><b>5,0</b><small>рейтинг в 2GIS</small></span></div>
+      <div role="listitem"><span class="i" style="background:var(--clay-pink);color:#BE185D"><i data-lucide="message-square-heart"></i></span><span><b>55 отзывов</b><small>от родителей</small></span></div>
+      <div role="listitem"><span class="i" style="background:var(--clay-blue);color:var(--color-primary)"><i data-lucide="book-open"></i></span><span><b>5 направлений</b><small>+ летний лагерь</small></span></div>
+      <div role="listitem"><span class="i" style="background:var(--clay-mint);color:#047857"><i data-lucide="credit-card"></i></span><span><b>Карта, QR</b><small>или наличные</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem" style="padding-top:var(--space-5)">
+  <div class="wrap center">
+    <span class="eyebrow"><i data-lucide="lightbulb" class="ico"></i>Знакомо?</span>
+    <h2>С чем к нам приходят родители</h2>
+    <div class="pains">
+      <div class="pain clay reveal"><span class="i" style="background:var(--clay-peach);color:#C2410C"><i data-lucide="pencil"></i></span><h3>Скоро в школу</h3><p>А ребёнок ещё не читает и неуверенно держит ручку.</p></div>
+      <div class="pain clay reveal"><span class="i" style="background:var(--clay-blue);color:var(--color-primary)"><i data-lucide="briefcase"></i></span><h3>Родители на работе</h3><p>Нужно место, где ребёнок под присмотром и занят делом.</p></div>
+      <div class="pain clay reveal"><span class="i" style="background:var(--clay-lilac);color:#6D28D9"><i data-lucide="smartphone"></i></span><h3>Лето с гаджетом</h3><p>Хочется, чтобы каникулы прошли с пользой и интересно.</p></div>
+      <div class="pain clay reveal"><span class="i" style="background:var(--clay-mint);color:#047857"><i data-lucide="trending-up"></i></span><h3>Тяжело даётся учёба</h3><p>Нужно подтянуть математику и уверенность в себе.</p></div>
+    </div>
+    <p class="answer"><i data-lucide="sparkles"></i>Wonder Kids помогает со всем этим в одном месте</p>
+  </div>
+</section>
+
+<!-- ===== DIRECTIONS ===== -->
+<section id="directions">
+  <div class="wrap">
+    <span class="eyebrow"><i data-lucide="book-open" class="ico"></i>Направления</span>
+    <h2>Чему мы учим</h2>
+    <p class="lead">Возраст, длительность и стоимость каждого курса владелец указывает в админ-панели.</p>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- ===== CAMP ===== -->
+<section id="camp" style="padding-top:0">
+  <div class="wrap">
+    <div class="camp clay">
+      <div>
+        <span class="eyebrow"><i data-lucide="sun" class="ico"></i>Летний лагерь</span>
+        <h2>Лето с пользой, а не с гаджетом</h2>
+        <p class="lead">Родители в отзывах рассказывают о насыщенной программе. Состав на будущее лето <span class="todo">уточнить</span></p>
+        <ul class="camp-list">
+          <li><i data-lucide="palette"></i>Мастер-классы и поделки</li>
+          <li><i data-lucide="bot"></i>Робототехника</li>
+          <li><i data-lucide="music"></i>Танцы и йога</li>
+          <li><i data-lucide="shield"></i>Таэквондо</li>
+          <li><i data-lucide="waves"></i>Бассейн</li>
+          <li><i data-lucide="bus"></i>Выезды: аквапарк, кино, театр</li>
+        </ul>
+        <a class="btn btn-cta" data-wa="Здравствуйте! Хочу узнать про летний лагерь Wonder Kids: смены, даты и стоимость." href="#"><i data-lucide="message-circle" class="ico"></i>Узнать о сменах в WhatsApp</a>
+      </div>
+      <div class="camp-photo"><div><i data-lucide="camera"></i>Фото и видео из лагеря<br>(выезды, мастер-классы)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ===== -->
+<section id="why" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow"><i data-lucide="award" class="ico"></i>Преимущества</span>
+    <h2>Почему родители выбирают Wonder Kids</h2>
+    <div class="adv" id="adv"></div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="rev-top">
+      <div>
+        <span class="eyebrow"><i data-lucide="message-square-heart" class="ico"></i>Отзывы</span>
+        <h2>Что говорят родители</h2>
+        <p class="lead" style="margin:0">Фрагменты реальных отзывов из 2GIS. Перед запуском сайта нужно разрешение авторов.</p>
+      </div>
+      <div class="score clay"><div class="num">5,0</div><div><span class="stars" aria-label="5 из 5"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></span><small>79 оценок · 55 отзывов</small></div></div>
+    </div>
+    <div class="reviews" id="revs"></div>
+    <div class="center" style="margin-top:var(--space-5);display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-cta" href="#book"><i data-lucide="calendar-check" class="ico"></i>Записаться на пробное</a>
+      <a class="btn btn-soft" href="https://2gis.kz/shymkent/firm/70000001085290701/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2GIS<i data-lucide="arrow-up-right" class="ico"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow"><i data-lucide="graduation-cap" class="ico"></i>Педагоги</span>
+    <h2>Педагоги, которых дети любят</h2>
+    <p class="lead">Сюда добавятся фото, имена и направления педагогов, когда каждый из них даст согласие на публикацию.</p>
+    <div class="team">
+      <div class="member clay reveal"><div class="ph" style="background:var(--clay-sun)"><i data-lucide="user-round"></i></div><b>Имя педагога</b><small>Подготовка к школе</small></div>
+      <div class="member clay reveal"><div class="ph" style="background:var(--clay-mint)"><i data-lucide="user-round"></i></div><b>Имя педагога</b><small>Английский язык</small></div>
+      <div class="member clay reveal"><div class="ph" style="background:var(--clay-lilac)"><i data-lucide="user-round"></i></div><b>Имя педагога</b><small>Ментальная арифметика</small></div>
+      <div class="member clay reveal"><div class="ph" style="background:var(--clay-pink)"><i data-lucide="user-round"></i></div><b>Имя педагога</b><small>Каллиграфия</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow"><i data-lucide="images" class="ico"></i>Галерея</span>
+    <h2>Как проходит день в Wonder Kids</h2>
+    <div class="gallery">
+      <div class="g w2 h2 reveal" style="background:var(--clay-sun)"><div><i data-lucide="school"></i>Классы и занятия</div></div>
+      <div class="g reveal" style="background:var(--clay-mint)"><div><i data-lucide="languages"></i>Английский</div></div>
+      <div class="g reveal" style="background:var(--clay-pink)"><div><i data-lucide="palette"></i>Творчество</div></div>
+      <div class="g reveal" style="background:var(--clay-blue)"><div><i data-lucide="sun"></i>Лагерь</div></div>
+      <div class="g reveal" style="background:var(--clay-lilac)"><div><i data-lucide="party-popper"></i>Выпускной</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap center">
+    <span class="eyebrow"><i data-lucide="circle-help" class="ico"></i>Вопросы</span>
+    <h2>Частые вопросы</h2>
+  </div>
+  <div class="wrap">
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===== BOOK + CONTACTS ===== -->
+<section id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow"><i data-lucide="calendar-check" class="ico"></i>Запись</span>
+      <h2>Запишите ребёнка на занятие</h2>
+      <p class="lead">Заявка откроется в WhatsApp уже заполненной. Останется нажать «Отправить».</p>
+    </div>
+    <div class="book">
+      <div class="panel clay">
+        <form id="form" novalidate>
+          <div class="row2">
+            <div class="field" data-req>
+              <label for="f-name">Ваше имя</label>
+              <input id="f-name" name="name" autocomplete="name" aria-describedby="e-name" placeholder="Например, Айгуль">
+              <span class="err" id="e-name"><i data-lucide="circle-alert"></i>Введите имя</span>
+            </div>
+            <div class="field" data-req data-phone>
+              <label for="f-phone">Телефон</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="e-phone" placeholder="+7 7__ ___ __ __">
+              <span class="err" id="e-phone"><i data-lucide="circle-alert"></i>Введите номер из 11 цифр</span>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-age">Возраст ребёнка</label>
+              <select id="f-age" name="age"><option>4–5 лет</option><option selected>5–6 лет</option><option>6–7 лет</option><option>1–2 класс</option><option>3–4 класс</option></select>
+            </div>
+            <div class="field">
+              <label for="f-dir">Направление</label>
+              <select id="f-dir" name="dir"></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-time">Удобное время</label>
+            <select id="f-time" name="time"><option>Утро</option><option>День</option><option>После обеда</option><option>Полный день</option></select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Комментарий <span class="help">— необязательно</span></label>
+            <textarea id="f-msg" name="msg" placeholder="Например: хотим подготовиться к 1 классу"></textarea>
+          </div>
+          <label class="consent" id="consentWrap"><input type="checkbox" name="ok" id="f-ok">Согласен(на) на обработку персональных данных</label>
+          <button class="btn btn-cta" type="submit" id="submitBtn"><i data-lucide="send" class="ico"></i>Отправить заявку в WhatsApp</button>
+          <div class="ok" id="ok" role="status"><i data-lucide="circle-check"></i>Готово! Открываем WhatsApp с вашей заявкой.</div>
+        </form>
+      </div>
+      <div class="panel clay" id="contacts">
+        <h3>Контакты</h3>
+        <ul class="contact-list">
+          <li><span class="i"><i data-lucide="map-pin"></i></span><div>г. Шымкент, 1-й переулок Байтурсынова, 5<br><small>1–2 этаж · мкр. Малый Самал, Туран район</small></div></li>
+          <li><span class="i"><i data-lucide="phone"></i></span><div><a href="tel:+77474008840">+7 747 400 88 40</a><br><a href="tel:+77471012572">+7 747 101 25 72</a></div></li>
+          <li><span class="i"><i data-lucide="clock"></i></span><div>Ежедневно 08:30–18:00<br><span class="todo">уточнить выходные</span></div></li>
+          <li><span class="i"><i data-lucide="instagram"></i></span><div><a href="https://instagram.com/wonder_kids_shymkent" target="_blank" rel="noopener">@wonder_kids_shymkent</a></div></li>
+        </ul>
+        <iframe class="map" title="Карта: Wonder Kids, 1-й переулок Байтурсынова, 5" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=69.5965%2C42.3405%2C69.6065%2C42.3455&amp;layer=mapnik&amp;marker=42.342952%2C69.601516"></iframe>
+        <div class="map-btns">
+          <a class="btn btn-soft btn-sm" href="https://2gis.kz/shymkent/firm/70000001085290701" target="_blank" rel="noopener"><i data-lucide="route" class="ico"></i>Маршрут в 2GIS</a>
+          <a class="btn btn-wa btn-sm" data-wa="Здравствуйте! Подскажите, как к вам лучше добраться?" href="#"><i data-lucide="message-circle" class="ico"></i>WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:#fff;font-size:20px;font-weight:900">Wonder Kids</b><br>Образовательный центр · Шымкент</div>
+    <div>Оплата: карта · наличные · QR-код<br><a href="#">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<a class="fab" data-wa="Здравствуйте! Хочу узнать о занятиях в Wonder Kids." href="#" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c0-.1-.2-.2-.4-.3z"/></svg></a>
+
+<nav class="mbar" aria-label="Быстрые действия">
+  <a href="tel:+77474008840"><i data-lucide="phone"></i>Звонок</a>
+  <a class="wa" data-wa="Здравствуйте! Хочу узнать о занятиях в Wonder Kids." href="#"><i data-lucide="message-circle"></i>WhatsApp</a>
+  <a href="https://2gis.kz/shymkent/firm/70000001085290701" target="_blank" rel="noopener"><i data-lucide="route"></i>Маршрут</a>
+</nav>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script>
+/* ===== Контент (в полной версии — из админ-панели) ===== */
+const SITE = {
+  whatsapp: "77474008840",
+  directions: [
+    {icon:"pencil-line", tint:"var(--clay-peach)", ic:"#C2410C", title:"Подготовка к школе", tags:["Дошкольники","Полный день"],
+     text:"Чтение, письмо и счёт в игровой форме. Ребёнок спокойно и уверенно идёт в первый класс."},
+    {icon:"languages", tint:"var(--clay-mint)", ic:"#047857", title:"Английский язык", tags:["Дети","Мини-группы"],
+     text:"Первые слова, песни и игры на английском. Ребёнок привыкает к языку с удовольствием."},
+    {icon:"calculator", tint:"var(--clay-lilac)", ic:"#6D28D9", title:"Ментальная арифметика", tags:["Дети","По уровням"],
+     text:"Счёт в уме по уровням. Тренирует внимание, память и скорость мышления."},
+    {icon:"pen-tool", tint:"var(--clay-pink)", ic:"#BE185D", title:"Каллиграфия", tags:["Дошкольники","Школьники"],
+     text:"Правильно держим ручку и пишем красиво. Учимся аккуратному и разборчивому почерку."},
+    {icon:"school", tint:"var(--clay-blue)", ic:"#1D4ED8", title:"Группы продлённого дня", tags:["Школьники"],
+     text:"Ребёнок после уроков под присмотром: домашние задания и развивающие занятия, пока родители на работе."},
+    {icon:"sun", tint:"var(--clay-sun)", ic:"#B45309", title:"Летний лагерь", tags:["Сезон","Смены — уточнить"],
+     text:"Учёба, творчество, спорт и выезды. Насыщенное лето в безопасной компании."}
+  ],
+  advantages: [
+    ["heart-handshake","var(--clay-pink)","#BE185D","Индивидуальный подход","Именно за это родители чаще всего благодарят нас в отзывах 2GIS."],
+    ["users","var(--clay-mint)","#047857","Небольшие группы","Педагог успевает уделить внимание каждому. Точное число детей — уточнить."],
+    ["trending-up","var(--clay-blue)","#1D4ED8","Результат, который видно","По отзывам, дети начинают читать, писать и считать уже через несколько месяцев."],
+    ["puzzle","var(--clay-sun)","#B45309","Учимся играя","Песни, игры и интересные задания. Дети ходят на занятия с радостью."],
+    ["shield-check","var(--clay-lilac)","#6D28D9","Безопасность","Видеокамеры в классах и чистое просторное здание — уточнить."],
+    ["layers","var(--clay-peach)","#C2410C","Всё в одном месте","Подготовка, кружки, продлёнка и лагерь. Удобно семьям с несколькими детьми."]
+  ],
+  reviews: [
+    {name:"Ж С", date:"май 2026", tint:"var(--clay-peach)", text:"Очень хорошая подготовка к школе, мой ребенок научился читать, считать и писать."},
+    {name:"Нигора Халилова", date:"июнь 2025", tint:"var(--clay-mint)", text:"Каждый день приходит довольный и не хочет пропускать занятие."},
+    {name:"Светлана Шушлебина", date:"февраль 2026", tint:"var(--clay-lilac)", text:"Индивидуальный подход к каждому ребёнку, уютная обстановка, домашняя атмосфера."}
+  ],
+  faq: [
+    ["С какого возраста можно прийти?","Возрастные группы уточняются у центра. Напишите в WhatsApp возраст ребёнка, и мы подберём направление. <span class='todo'>уточнить</span>"],
+    ["Сколько стоят занятия?","Стоимость зависит от направления и формата. Актуальные цены пришлём в WhatsApp. <span class='todo'>можно опубликовать цены «от»</span>"],
+    ["Как оплатить?","Картой, наличными или по QR-коду."],
+    ["Можно ли прийти на пробное занятие?","Запишитесь через форму или WhatsApp, и мы согласуем удобное время. <span class='todo'>уточнить условия</span>"],
+    ["Как добраться?","1-й переулок Байтурсынова, 5 (1–2 этаж), мкр. Малый Самал. Остановка «центр Кардиологии» — около 370 м. Рядом есть парковки."]
+  ]
+};
+
+/* ===== Render ===== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+$("#cards").innerHTML = SITE.directions.map((d,i) => `
+  <article class="card clay reveal" style="--tint:${d.tint};--ic:${d.ic};--i:${i}">
+    <span class="i"><i data-lucide="${d.icon}"></i></span>
+    <h3>${esc(d.title)}</h3>
+    <div class="chips">${d.tags.map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>
+    <p>${esc(d.text)}</p>
+    <div class="foot">
+      <span class="price">Цена — уточняйте <span class="todo">уточнить</span></span>
+      <a class="btn btn-soft btn-sm" data-wa="Здравствуйте! Хочу записать ребёнка на «${esc(d.title)}». Подскажите расписание и стоимость." href="#">Расписание<i data-lucide="arrow-right" class="ico"></i></a>
+    </div>
+  </article>`).join("");
+
+$("#adv").innerHTML = SITE.advantages.map(([ic,bg,c,t,p],i) => `
+  <div class="adv-item clay reveal" style="--i:${i}"><span class="i" style="background:${bg};color:${c}"><i data-lucide="${ic}"></i></span>
+  <div><h3>${esc(t)}</h3><p>${esc(p)}</p></div></div>`).join("");
+
+const initials = n => n.split(" ").map(w=>w[0]).join("").slice(0,2).toUpperCase();
+$("#revs").innerHTML = SITE.reviews.map((r,i) => `
+  <figure class="review clay reveal" style="--i:${i};margin:0">
+    <i data-lucide="quote" class="q"></i>
+    <span class="stars" aria-label="5 из 5">${'<i data-lucide="star"></i>'.repeat(5)}</span>
+    <blockquote>«${esc(r.text)}»</blockquote>
+    <figcaption class="who"><span class="ava" style="background:${r.tint}">${esc(initials(r.name))}</span>
+      <div><b>${esc(r.name)}</b><small>${esc(r.date)}</small></div>
+      <a class="src" href="https://2gis.kz/shymkent/firm/70000001085290701/tab/reviews" target="_blank" rel="noopener">2GIS</a></figcaption>
+  </figure>`).join("");
+
+$("#faqList").innerHTML = SITE.faq.map(([q,a]) => `
+  <details class="clay"><summary>${esc(q)}<span class="pl"><i data-lucide="plus"></i></span></summary><p>${a}</p></details>`).join("");
+
+$("#f-dir").innerHTML = SITE.directions.map(d=>`<option>${esc(d.title)}</option>`).join("");
+
+if (window.lucide) lucide.createIcons();
+
+/* ===== WhatsApp links ===== */
+const waUrl = text => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
+document.querySelectorAll("[data-wa]").forEach(a => { a.href = waUrl(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+
+/* ===== Mobile menu ===== */
+const menu = $("#menu"), burger = $("#burger");
+burger.addEventListener("click", () => {
+  const open = menu.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+  burger.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+});
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { menu.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+
+/* ===== Reveal stagger ===== */
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12}) : null;
+document.querySelectorAll(".reveal").forEach((el,i) => { if (!el.style.getPropertyValue("--i")) el.style.setProperty("--i", i % 4); io ? io.observe(el) : el.classList.add("in"); });
+
+/* ===== Form: validate on blur, error near field, loading → success ===== */
+const form = $("#form");
+const phoneOk = v => v.replace(/\D/g,"").length === 11;
+function check(field){
+  const inp = field.querySelector("input"); const v = inp.value.trim();
+  const bad = !v || (field.hasAttribute("data-phone") && !phoneOk(v));
+  field.classList.toggle("invalid", bad); inp.setAttribute("aria-invalid", bad);
+  return !bad;
+}
+form.querySelectorAll(".field[data-req]").forEach(f => {
+  const inp = f.querySelector("input");
+  inp.addEventListener("blur", () => check(f));
+  inp.addEventListener("input", () => { if (f.classList.contains("invalid")) check(f); });
+});
+$("#f-ok").addEventListener("change", e => $("#consentWrap").classList.toggle("invalid", !e.target.checked));
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const fields = [...form.querySelectorAll(".field[data-req]")];
+  const okFields = fields.map(check);
+  const consent = $("#f-ok").checked;
+  $("#consentWrap").classList.toggle("invalid", !consent);
+  const firstBad = fields.find((f,i) => !okFields[i]);
+  if (firstBad) { firstBad.querySelector("input").focus(); return; }
+  if (!consent) { $("#f-ok").focus(); return; }
+  const f = form.elements, btn = $("#submitBtn");
+  btn.setAttribute("aria-busy","true");
+  const text = `Здравствуйте! Заявка с сайта Wonder Kids.\nИмя: ${f.name.value}\nТелефон: ${f.phone.value}\nВозраст ребёнка: ${f.age.value}\nНаправление: ${f.dir.value}\nУдобное время: ${f.time.value}` + (f.msg.value.trim() ? `\nКомментарий: ${f.msg.value}` : "");
+  setTimeout(() => { btn.removeAttribute("aria-busy"); $("#ok").style.display = "flex"; window.open(waUrl(text), "_blank"); }, 400);
+});
+</script>
+</body>
+</html>
